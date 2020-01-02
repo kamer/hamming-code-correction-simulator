@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hamming Error Correction Simulator</title>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap-grid.css}">
+    <link rel="stylesheet" th:href="@{/custom.css}">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <form th:method="post" th:action="@{/}">
+                <div class="form-group">
+                    <label for="inputText">Enter your input (Max 100 chars)</label>
+                    <textarea class="form-control" maxlength="100" rows="3" name="inputText" cols="100" id="inputText"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="jumbotron mt-5" th:if="${inputText}" th:object="${response}">
+        <h3>Input Text</h3>
+        <p th:text="${inputText}"></p>
+        <hr class="my-4">
+        <h3>Binary Representation</h3>
+        <p th:text="${binaryForm}"></p>
+        <hr class="my-4">
+        <h3>Encoded Text</h3>
+        <p th:text="${encodedTextInSeven}"></p>
+        <hr class="my-4">
+        <h3>Corrupted Binary</h3>
+        <p th:text="${corruptedBinary}"></p>
+        <hr class="my-4">
+        <h3>Corrupted Text</h3>
+        <p th:text="${corruptedText}"></p>
+        <hr class="my-4">
+        <h3>Corrected Binary</h3>
+        <span th:text="'Corrected Indexes:' + ${errorIndexes}"></span>
+        <p th:text="${correctedBinary}"></p>
+        <hr class="my-4">
+        <h3>Decoded Binary</h3>
+        <p th:text="${decodedBinary}"></p>
+        <hr class="my-4">
+        <h3>Decoded Text</h3>
+        <p th:text="${decodedText}"></p>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/jquery-3.4.1.js}"></script>
+<script type="text/javascript" th:src="@{/custom.js}"></script>
+</body>
+</html>
