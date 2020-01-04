@@ -3,7 +3,7 @@
 It's a Hamming Code Correction simulator as the name suggests. It's for my Data Communications lecture assignment. So I intended to achieve just the functionality. I'm gonna refactor this repo some time in the future for code quality.
 
 ## Installation Steps
-- git clone https://github.com/kamer/hamming-code-correction-simulator.git
+- git clone [https://github.com/kamer/hamming-code-correction-simulator.git](https://github.com/kamer/hamming-code-correction-simulator.git)
 - cd hamming-code-correction-simulator 
 - mvn install
 - java -jar ./target/hamming-code-correction-simulator-0.0.1-SNAPSHOT.jar
